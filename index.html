@@ -8,18 +8,21 @@
     <title>Weather App</title>
   </head>
   <body>
-    <h1>Weather App</h1>
-    <form id="weatherForm">
-      <label for="location">Enter Location:</label>
-      <input
-        type="text"
-        id="location"
-        name="location"
-        placeholder="e.g., Addis Ababa"
-        required
-      />
-      <button type="submit">Get Weather</button>
-    </form>
-    <div id="weather-display" class="display-container"></div>
+    <div class="container">
+      <h1>Weather App</h1>
+      <form id="weatherForm">
+        <label for="location">Enter Location:</label>
+        <input
+          type="text"
+          id="location"
+          name="location"
+          placeholder="e.g., Addis Ababa"
+          required
+        />
+        <button type="submit">Get Weather</button>
+      </form>
+      <div id="loading" class="loading hidden">Loading...</div>
+      <div id="weather-display" class="display-container"></div>
+    </div>
   </body>
 </html>
