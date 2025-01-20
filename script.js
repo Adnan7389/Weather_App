@@ -5,6 +5,8 @@ const apiUrl = 'https://weather.visualcrossing.com/VisualCrossingWebServices/res
 document.addEventListener("DOMContentLoaded", () => {
 
   const loadingElement = document.querySelector("#loading");
+  const weatherDisplay = document.querySelector("#weather-display");
+
   document.querySelector('#weatherForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
@@ -13,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (location) {
       loadingElement.classList.remove("hidden");
+
+      weatherDisplay.innerHTML = "";
 
       fetchWeatherData(location);
     } else {
@@ -73,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function displayWeatherData(weatherData) {
 
-    const weatherDisplay = document.querySelector("#weather-display");
     weatherDisplay.innerHTML = `<h2>Weather in ${weatherData.location}</h2>
       <p><strong>Temperature:</strong> ${weatherData.temperature}°C</p>
       <p><strong>Condition:</strong> ${weatherData.description}</p>
